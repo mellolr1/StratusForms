@@ -858,8 +858,8 @@ $.fn.StratusFormsTranslate = function (options)
             value = ""; //$(this).find("option:selected").text();
              $(this).find(":selected").each(function(i, selected){
                 if(value != "")value += ";#";
-
-                value += $(selected).text();
+                value += $(selected).val(); // DKIT Use the Option value
+                // value += $(selected).text();
             });
             var encryptField = $(this).hasClass(gStratusFormsEncryptClass);
             var encodedValue = htmlEncode(value, encryptField);
